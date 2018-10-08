@@ -71,9 +71,9 @@ export class IlandBrowserAuthProvider implements AuthProvider {
    * Log out the authenticated user.
    * @returns {Promise<any>} promise that resolves when logout is complete.
    */
-  async logout(): Promise<any> {
+  async logout(options?: any): Promise<any> {
     return new Promise<any>((resolve, reject) => {
-      this._keycloak.logout().success(() => {
+      this._keycloak.logout({redirectUri: options.redirectUri}).success(() => {
         resolve(null);
       }).error(function() {
         reject(null);
