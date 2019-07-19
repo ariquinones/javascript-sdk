@@ -1,6 +1,6 @@
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { MockNotFoundResponse } from '../../../config/__mocks__/errors';
-// import { MockEdgeGatewayFirewallSourceObjectsResponse } from '../../../model/edge/edge-gateway-firewall/__mocks__/edge-gateway-firewall';
+import { MockEdgeGatewayFirewallSourceObjectsResponse } from '../../../model/edge/edge-gateway-firewall/__mocks__/edge-gateway-firewall';
 import { MockEdgeSslVpnResponse } from '../../../model/edge/ssl-vpn/__mocks__/edge-ssl-vpn';
 import {
   MockEdgeFirewallCheckpointResponse, MockEdgeFirewallCheckpointsResponse, MockEdgeFirewallLogsResponse,
@@ -17,17 +17,6 @@ import { MockEdgeLoadbalancerResponse } from '../../../model/edge/load-balancer/
 import { MockEdgeResponse } from '../../../model/edge/__mocks__/edge';
 import { MockEdgeStatsResponse } from '../../../model/edge/network-perf-sample/__mocks__/network-perf-sample';
 import { MockEdgeNatJsonResponse } from '../../../model/edge/nat/__mocks__/edge-nat';
-
-export const MockEdgeGatewayFirewallSourceObjectsResponse: Promise<AxiosResponse> = new Promise<AxiosResponse>(
-  function(resolve) {
-    resolve({
-      data: {},
-      status: 200,
-      statusText: '',
-      headers: {},
-      config: {}
-    });
-  });
 
 export async function MockEdgeGet(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse> {
   switch (true) {
